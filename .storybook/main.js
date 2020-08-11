@@ -16,7 +16,6 @@ module.exports = {
           /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
         )
       ) {
-        console.log("HERERADWDW");
         return {
           ...rule,
           test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/,
@@ -28,7 +27,7 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
     });
 
     console.log(config.module.rules);

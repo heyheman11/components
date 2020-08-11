@@ -2,16 +2,13 @@ import React, { useState } from "react";
 import Chevron from "../../assets/Chevron.svg";
 import "./Card.scss";
 
-const Card = ({ heading, children, hover, animated }) => {
+const Card = ({ heading, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const getClasses = () => {
     let classList = ["card-container"];
-    if (animated) {
-      classList.push("card-container__animated");
-    }
-    if (hover) {
-      classList.push("card-container__hover");
+    if (isOpen) {
+      classList.push("card-container__active");
     }
     return classList.join(" ");
   };
@@ -20,7 +17,7 @@ const Card = ({ heading, children, hover, animated }) => {
     <div className={getClasses()}>
       <button onClick={() => setIsOpen(!isOpen)}>
         <h4>{heading}</h4>
-        <Chevron />
+        <Chevron width={25} height={25} />
       </button>
       <div className="card-body">{isOpen ? children : null}</div>
     </div>
