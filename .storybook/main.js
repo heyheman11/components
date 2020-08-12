@@ -30,8 +30,6 @@ module.exports = {
       use: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
     });
 
-    console.log(config.module.rules);
-
     return config;
   },
 };

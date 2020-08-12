@@ -1,0 +1,24 @@
+.side-bar {
+  display: inline-block;
+  background-color: papayawhip;
+  height: 100vh;
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+  &__list-item {
+    list-style-type: none;
+    width: 200px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    & > a {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.side-bar__list-item-icon {
+  margin: 0 10px 0 0;
+}
