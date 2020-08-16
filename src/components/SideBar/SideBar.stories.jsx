@@ -15,17 +15,17 @@ export default {
 
 const data = [
   {
-    icon: <Chevron width={20} height={20} />,
+    icon: <Chevron />,
     title: "Home page",
     link: "/chevron",
   },
   {
-    icon: <Chevron width={20} height={20} />,
+    icon: <Chevron />,
     title: "Second Page",
     link: "/chevron",
   },
   {
-    icon: <Chevron width={20} height={20} />,
+    icon: <Chevron />,
     title: "Third Page",
     link: "/chevron",
   },
@@ -33,10 +33,4 @@ const data = [
 
 export const NotExpanded = () => <SideBar items={data} />;
 
-export const ExpandedByButton = () => (
-  <SideBar items={data} expanded={{ byButton: true }} />
-);
-
-export const ExpandedByMouse = () => (
-  <SideBar items={data} expanded={{ byMouse: true }} />
-);
+export const ExpandedByButton = () => <SideBar items={data} expandable />;

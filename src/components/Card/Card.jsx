@@ -17,7 +17,7 @@ const Card = ({ heading, children }) => {
     <div className={getClasses()}>
       <button onClick={() => setIsOpen(!isOpen)}>
         <h4>{heading}</h4>
-        <Chevron width={25} height={25} />
+        <Chevron />
       </button>
       <div className="card-body">{isOpen ? children : null}</div>
     </div>

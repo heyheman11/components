@@ -3,12 +3,11 @@ import "./SideBar.scss";
 import PropTypes from "prop-types";
 import Chevron from "../../assets/Chevron.svg";
 
-const SideBar = ({ items, expanded }) => {
+const SideBar = ({ items, expandable }) => {
   const [isSideBarExanded, setIsSideBarExpanded] = useState(false);
-  const isExpandable = expanded.byButton || expanded.byMouse;
 
   const getRowBody = ({ icon, title }) => {
-    if (isExpandable) {
+    if (expandable) {
       return (
         <>
           <div className="side-bar__list-item-icon">{icon}</div>
@@ -37,8 +36,11 @@ const SideBar = ({ items, expanded }) => {
 
   const getExpandedButton = () => {
     return (
-      <button className="side-bar__back-button" onClick={() => setIsSideBarExpanded(!isSideBarExanded)}>
-        <Chevron width={20} height={20} />
+      <button
+        className="side-bar__back-button"
+        onClick={() => setIsSideBarExpanded(!isSideBarExanded)}
+      >
+        <Chevron />
       </button>
     );
   };
@@ -54,7 +56,7 @@ const SideBar = ({ items, expanded }) => {
   return (
     <div className={getClassList()}>
       <ul className="side-bar__list">{getItems()}</ul>
-      {expanded.byButton ? getExpandedButton() : null}
+      {expandable ? getExpandedButton() : null}
     </div>
   );
 };
@@ -67,17 +69,11 @@ SideBar.propTypes = {
       link: PropTypes.string,
     })
   ).isRequired,
-  expanded: PropTypes.shape({
-    byButton: PropTypes.bool,
-    byMouse: PropTypes.bool,
-  }),
+  expandable: PropTypes.bool,
 };
 
 SideBar.defaultProps = {
-  expanded: {
-    byButton: false,
-    byMouse: false,
-  },
+  expandable: false,
 };
 
 export { SideBar };

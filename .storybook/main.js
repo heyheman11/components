@@ -27,7 +27,7 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.svg$/,
-      use: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
+      use: [{ loader: "@svgr/webpack", options: { icon: true } }],
     });
 
     return config;

@@ -1,33 +1,23 @@
 .side-bar {
   display: grid;
   grid-template-rows: auto 50px;
+  grid-template-columns: auto;
   justify-items: center;
   align-items: center;
   background-color: papayawhip;
   height: 100%;
-  max-width: 50px;
+  max-width: max-content;
 }
 
 .side-bar--expanded {
-  max-width: 250px;
   & .side-bar__back-button svg {
     transform: rotate(180deg);
   }
 }
 
-.side-bar__back-button {
-  width: 35px;
-  justify-self: end;
-  margin: 0 10px 0 0;
-  & > svg {
-    transition: transform 0.4s;
-    transform: rotate(0deg);
-  }
-}
-
 .side-bar__list {
   margin: 0;
-  padding: 0;
+  padding: 1em;
 }
 
 .side-bar__list-item {
@@ -38,6 +28,7 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 0.5em;
+    max-width: 250px;
     &:hover {
       background-color: grey;
     }
@@ -45,9 +36,24 @@
 }
 
 .side-bar__list-item-title {
-  display: inline;
+  display: inline-block;
   margin: 0 0 0 0.5em;
   &--hide {
     display: none;
+  }
+}
+
+.side-bar__back-button {
+  width: 35px;
+  height: 35px;
+  justify-self: end;
+  margin: 0 1em 1em 0;
+  border: none;
+  border-radius: 1em;
+  text-align: center;
+  cursor: pointer;
+  & > svg {
+    transition: transform 0.4s;
+    transform: rotate(0deg);
   }
 }
