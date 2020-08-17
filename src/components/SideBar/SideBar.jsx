@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import * as React from "react";
 import "./SideBar.scss";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Chevron from "../../assets/Chevron.svg";
 
 const SideBar = ({ items, expandable }) => {
-  const [isSideBarExanded, setIsSideBarExpanded] = useState(false);
+  const [isSideBarExanded, setIsSideBarExpanded] = React.useState(false);
 
   const getRowBody = ({ icon, title }) => {
     if (expandable) {
@@ -61,19 +61,19 @@ const SideBar = ({ items, expandable }) => {
   );
 };
 
-SideBar.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.element,
-      title: PropTypes.string,
-      link: PropTypes.string,
-    })
-  ).isRequired,
-  expandable: PropTypes.bool,
-};
+// SideBar.propTypes = {
+//   items: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       icon: PropTypes.element,
+//       title: PropTypes.string,
+//       link: PropTypes.string,
+//     })
+//   ).isRequired,
+//   expandable: PropTypes.bool,
+// };
 
-SideBar.defaultProps = {
-  expandable: false,
-};
+// SideBar.defaultProps = {
+//   expandable: false,
+// };
 
 export { SideBar };

@@ -1,19 +1,21 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.jsx",
+  mode: "production",
+  entry: ["./src/index.jsx"],
+  output: {
+    path: path.resolve(__dirname, "lib"),
+    library: "component-library",
+    libraryTarget: "umd",
+    filename: "index.js",
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
-      },
-      {
-        test: /\.html$/,
-        use: ["html-loader"],
       },
       {
         test: /\.(css|scss)$/,
@@ -38,21 +40,28 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      react: path.resolve(__dirname, "./node_modules/react"),
+      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+    },
+  },
+  externals: {
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React",
+    },
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "ReactDOM",
+      root: "ReactDOM",
+    },
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./index.html",
-    }),
     new MiniCssExtractPlugin({
       fileName: "[name].[hash].css",
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].[hash].js",
-  },
 };
