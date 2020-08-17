@@ -41,8 +41,8 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      react: require.resolve("react"),
-      "react-dom": require.resolve("react-dom"),
+      react: require.resolve("../node_modules/react"),
+      "react-dom": require.resolve("../node_modules/react-dom"),
     },
   },
   externals: {
