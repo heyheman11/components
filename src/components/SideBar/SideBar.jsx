@@ -54,10 +54,10 @@ const SideBar = ({ items, expandable }) => {
   };
 
   return (
-    <div className={getClassList()}>
+    <nav className={getClassList()}>
       <ul className="side-bar__list">{getItems()}</ul>
       {expandable ? getExpandedButton() : null}
-    </div>
+    </nav>
   );
 };
 
