@@ -34,15 +34,15 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
+        use: [{ loader: "@svgr/webpack", options: { icon: true } }],
       },
     ],
   },
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      react: path.resolve(__dirname, "./node_modules/react"),
-      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+      react: require.resolve("react"),
+      "react-dom": require.resolve("react-dom"),
     },
   },
   externals: {

@@ -3,3 +3,4 @@
 /lib/
 
 *.tgz
+yarn-error.log
