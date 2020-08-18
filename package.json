@@ -1,13 +1,11 @@
 {
   "name": "dz-base-components",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "A simple component library",
   "main": "./lib/index.js",
   "files": [
     "lib/",
     "src/",
-    ".babelrc",
-    "webpack.config.js",
     "README.md"
   ],
   "scripts": {
