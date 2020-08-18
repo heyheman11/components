@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "production",
-  entry: ["./src/index.jsx"],
+  entry: ["./src/index.js"],
   output: {
     path: path.resolve(__dirname, "lib"),
     library: "component-library",
@@ -15,7 +15,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              ["@babel/preset-env", { modules: false }],
+              "@babel/preset-react",
+            ],
+          },
+        },
       },
       {
         test: /\.(css|scss)$/,
@@ -41,10 +49,6 @@ module.exports = {
   devtool: "source-map",
   resolve: {
     extensions: [".js", ".jsx"],
-    alias: {
-      react: require.resolve("../node_modules/react"),
-      "react-dom": require.resolve("../node_modules/react-dom"),
-    },
   },
   externals: {
     react: {

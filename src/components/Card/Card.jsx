@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Chevron from "../../assets/Chevron.svg";
 import "./Card.scss";
 
 const Card = ({ heading, children }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const getClasses = () => {
     let classList = ["card-container"];

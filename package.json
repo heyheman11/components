@@ -5,7 +5,6 @@
   "main": "./lib/index.js",
   "files": [
     "lib/",
-    "src/",
     "README.md"
   ],
   "scripts": {
@@ -20,6 +19,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
