@@ -10,6 +10,7 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "sb": "start-storybook",
+    "sb:build": "build-storybook -o ./dist",
     "build": "webpack"
   },
   "author": "Daniel Zambetto",
