@@ -1,5 +1,9 @@
 import React from "react";
-import { addDecorator } from "@storybook/react";
-import { Global } from "./Global";
 
-addDecorator((storyFn) => <Global>{storyFn()}</Global>);
+export const decorators = [
+  (Story) => (
+    <div style={{ boxSizing: "border-box" }}>
+      <Story />
+    </div>
+  ),
+];

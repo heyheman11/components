@@ -1,18 +1,16 @@
 {
   "name": "dz-base-components",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "A simple component library",
   "main": "./lib/index.js",
   "files": [
     "lib/",
-    "src/",
-    ".babelrc",
-    "webpack.config.js",
     "README.md"
   ],
   "scripts": {
     "start": "webpack-dev-server --open",
     "sb": "start-storybook",
+    "sb:build": "build-storybook -o ./dist",
     "build": "webpack"
   },
   "author": "Daniel Zambetto",
@@ -22,10 +20,11 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
-    "@storybook/react": "^6.0.2",
+    "@storybook/react": "^6.0.13",
     "@svgr/webpack": "^5.4.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",

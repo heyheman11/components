@@ -1,18 +1,26 @@
-# React components
+# dz-base-components
+![npm](https://img.shields.io/npm/v/dz-base-components)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](heyheman11.github.io/components/)
 
-To use this package you must do the following steps for this package:
+Yet another react component library! 
 
-- yarn
-- yarn build
-- yarn pack
+A place where I can create components and test them.
 
-Go to the project you would like to use this package in and do:
+```sh
+> yarn add dz-base-components
+```
 
-- yarn add \$ABSOLUTE_PATH_TO_TARBAR
+## Components
 
-- update webpack to force your projet to use the one version of react
+- SideBar
+- Card
+- Button
 
-webpack.conf.js
+## Using
+
+This library only supports es5 import/export syntax.
+
+React and react-dom are peer dependencies, so they are not bundled in this package. To avoid bundling duplicate react packages you can do the following in your webpack config.
 
 ```js
 module.exports = {
